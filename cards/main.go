@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"strconv"
 )
 
 func mainold() {
@@ -48,34 +47,4 @@ func mainold() {
 
 func newCard() string {
 	return "Five of diamonds"
-}
-
-
-func errorVariables(args[] interface{}) {
-	var total, nInts, nFloats int
-	invalid := make([]string, 0)
-	for _,k := range args[1:] {
-		_, err := strconv.Atoi(k)
-		if err == nil {
-			total++
-			nInts++
-			continue
-		}
-
-		_, err = strconv.ParseFloat(k, 64)
-		if err == nil {
-			total++
-			nFloats++
-			continue
-		}
-	}
-
-	fmt.Println(total)
-	fmt.Println(nInts)
-	fmt.Println(invalid)
-
-}
-
-func main()  {
-	errorVariables(1, "2", 3)
 }
