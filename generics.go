@@ -17,6 +17,3 @@ func main() {
 	Print(Ints)
 	Print(Strings)
 }
-
-show index from non_mdm_event_store;
-ALTER TABLE non_mdm_event_store DROP INDEX non_mdm_event_store_id_index;
