@@ -1,5 +1,16 @@
 package main
 
+/*
+Slices are dynamic, which means that they can grow or shrink after creation if needed.
+Any changes you make to a slice inside a function also affect the original slice.
+
+type SliceHeader struct {
+	Data uintptr
+	Len int
+	Cap int
+}
+
+*/
 import "fmt"
 
 func main() {
@@ -35,4 +46,12 @@ func main() {
 	make2D[0] = []int{1, 2, 3, 4}
 	make2D[1] = []int{-1, -2, -3, -4}
 	fmt.Println(make2D)
+
+	// defina anew slice, or you can use make
+	old := []int{1, 2, 3, 4}
+	// make a new slice with the old slice and some new elements.
+	// Note the usage of '...' the spread operator.
+	new := append(old, []int{5, 6, 7, 8}...)
+	fmt.Println(new)
+	
 }
